@@ -1,0 +1,95 @@
+body {
+  background-color: white;
+}
+.container-fluid {
+  
+}
+.msjcontainer {
+}
+
+#msj {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  color: royalblue;
+}
+
+#enterGold {
+  text-align: left;
+}
+#goldinpt {
+  font-size: 25px;
+  color: grey;
+}
+input[type="number"] {
+  border: none;
+  width: 120px;
+  border-bottom: 3px solid olivedrab;
+  background: none;
+  font-size: 25px;
+  font-weight: ;
+
+  color: black;
+}
+button {
+  border: none;
+  border-radius: 20px;
+  width: 100px;
+  padding: 5px;
+  background-color: skyblue;
+  font-size: medium;
+  font-weight: ;
+  color: white;
+}
+.col {
+  /* border-style: ; */
+  border-spacing: 15px;
+  border-radius: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+  height: 450px;
+}
+#column {
+  background-color: linen;
+}
+
+#calCard {
+  /* text-align: center; */
+}
+#datetime {
+  color: black;
+}
+#goldratevalue {
+  color: red;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  color: lightseagreen;
+}
+#calcvalue {
+  text-align: left;
+}
+table {
+  margin-top: 20px;
+  width: 100%;
+}
+tr:hover {
+  background-color: lightsalmon;
+}
+table,
+th {
+  border: 1px solid black;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#girvitable{
+  font-size: 17px;
+  color: black;
+}

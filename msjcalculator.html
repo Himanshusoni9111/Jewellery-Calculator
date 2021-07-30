@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="btgst.css" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- MSJ container -->
+      <div class="msjcontainer top">
+        <div id="msj">Maa Savitri Jewellers </div>
+        <hr>
+        <div id="enterGold" >
+              <div id="goldinpt">Gold Rate : <span><input type="number" id="goldrate" value="" /></span>
+              
+           
+            <!-- ADD gold rate button -->
+            <span><button onclick="addGoldRate()" id="addbutton">FIX</button></span>
+            <!-- reset button -->
+            <span> <button onclick="resetGold()" id="resetbutton">RESET</button></span>
+          </div></div>
+         </div>
+        
+      </div>
+      <hr />
+      <div style="color: black;font-size: 25px;
+      background-color:thistle;text-align: center;">
+        <span>
+          Date : <strong><span id="datetime"></span></strong>
+        </span>
+        , Gold rate :
+        <span id="goldratevalue"><strong>_______</strong></span> (without GST)
+      </div>
+      <hr >
+
+      <!-- row for calcutors -->
+      <div class="row">
+        <!-- GST calculator -->
+        <div class="col" id="column">
+
+          <div id="calCard">
+            <h1 >GST Calculator</h1>
+            
+            <div id="goldtxt" style="text-align: center;font-size: 20px;">
+              Goldrate : <span style="color: tomato;" id="goldrateincard"></span>
+            </div>
+            <div id="wtxt" style="text-align: left; margin: 5px;display: inline; font-size: 20px;">
+              weight : <input type="number" value="" id="weight" />
+            </div>
+            
+            <div id="labtxt" style="margin: 5px;display: inline;font-size: 20px; ">
+              Labour : <input type="number" value="" id="labour" />
+            </div>
+            
+            <!-- Calculatebutton -->
+            <button  style="margin-top: 15px;margin-left: 25%;"onclick="Calfunc()">Calculate</button>
+            <span> <button style="margin-top: 15px; margin-left: 30px;"onclick="resetcalc()">Reset</button></span>
+            <!-- table -->
+            <table>
+                <tr>
+                    <th></th>
+                    <th>values</th>
+                </tr>
+                <!-- total labour -->
+                <tr>
+                    <th><div style="text-align: left;">total Labour : </th>
+                    <th><span id="totalLabour"></span></div></th>
+                </tr>
+                 <!-- total gold price -->
+                <tr>
+                    <th><div style="text-align: left;">total gold price :</th>
+                        <th><span id="totalGold"></span></div></th>
+                </tr>
+                <!-- total sum price -->
+                <tr>
+                    <th><div style="text-align: left;"id="totaltxt">total:</th>
+                    <th> <span id="totalprice"></span></div></th>
+                </tr>
+                <!--  sgst-->
+                <tr>
+                    <th><div style="text-align: left;"id="sgstxt">SGST 1.5%:</th>
+                        <th><span id="sgst"></span></div></th>
+                </tr>
+                 <!-- CGST -->
+                 <tr>
+                    <th><div style="text-align: left;"id="cgstxt">CGST 1.5%:</th>
+                        <th><span id="cgst"></span></div></th>
+                </tr>
+<!-- GST -->
+                <tr>
+<th><div style="text-align: left;"id="gsttxt">GST 3% : </th>
+    <th> <span id="gst"></span></div></th>
+                </tr>
+                <!-- Total ammount -->
+                <tr>
+                    <th><div style="text-align: left;"id="totalammtxt">
+              Total Ammount:</th>
+              <th><span id="totalammount"></span></th>
+                </tr>
+                 </div>
+            </table>
+          </div>
+        </div>
+        <!-- Direct GST calculator -->
+
+        <div class="col" id="column">
+          <div id="calCard">
+            <h1 style="text-align: center;">Direct GST Calculator</h1>
+            <div style="text-align: left; margin-top: 40px;font-size: 20px;">
+                 enter ammount :
+                 <input type="number" value="0" id="directAmm">
+            </div>
+            <div><button  style="margin-left: 35%;margin-top: 15px;" onclick="directGSTfunc()">
+                Calculate
+            </button></div>
+               
+            <!-- Table for direct GST -->
+            <table>
+                <tr>
+                    <th></th>
+                    <th>values</th>
+                </tr>
+                  <tr>
+                      <th>SGST 1.5%</th>
+                      <th><span id="directsgst"></span></th>
+                    </tr>
+                    <tr>
+                        <th>CGST 1.5%</th>
+                        <th><span id="directcgst"></span></th>
+                    </tr>
+                    <tr>
+                        <th>GST 3%</th>
+                        <th><span id="directgst"></span></th>
+                    </tr>
+                    <tr>
+                        <th>total Ammount : </th>
+                        <th><span id="directTotal"></span></th>
+                    </tr>
+               
+            </table>
+          </div>
+        </div>
+        <!-- Girvi calculator -->
+        <div class="col" id="column">
+          <div id="calCard">
+            <h1 style="text-align: center;">Girvi Calculator</h1>
+            <div style="font-size: 20px;margin-top: 40px;">Enter Ammount : <input type="number" id="girviamm"></div>
+            <div style="margin-top:15px;">
+              <div style="font-size: 20px;">Girvi Rakhne ki tarikh: <input type="date" id="date1" value=""></div>
+            
+            <div style="font-size: 20px;">Girvi Uthane ki tarikh: <input type="date" id="date2"></div>
+            
+            </div>
+            
+            <button style="margin-left:35% ; margin-top: 15px;" onclick="girvicalfunc()">calculate</button>
+            <div id="girvitable">
+              <div>number of months : <span id="months"></span></div>
+            
+            <div>rem: <span id="rem"></span></div>
+            
+            <div>Days: <span id="resultmonths"></span> </div>
+            
+            <div>Years: <span id="years"></span></div>
+            
+            <div>Total Interest (3%) = <span style="color:purple;font-weight: bold; "id="interest"></span></div>
+            
+            <div>Total Ammount : <span style="color: purple;font-weight: bold;" id="totalAmmount"></span></div>
+            </div>
+            
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="bgst.js"></script>
+  </body>
+</html>
